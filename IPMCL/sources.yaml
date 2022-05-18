@@ -1,0 +1,76 @@
+Minecraft:
+    Versions:
+      Offical: http://launchermeta.mojang.com/mc/game/version_manifest_v2.json
+
+      Mirrors:
+        BMCLAPI: https://bmclapi2.bangbang93.com/mc/game/version_manifest_v2.json
+        MCBBS: https://download.mcbbs.net/mc/game/version_manifest_v2.json
+
+    Assets:
+      Offical: http://resources.download.minecraft.net
+
+      Mirrors:
+        BMCLAPI: https://bmclapi2.bangbang93.com/assets
+        MCBBS: https://download.mcbbs.net/assets
+
+    Library:
+      Offical: https://libraries.minecraft.net/
+
+      Mirrors:
+        BMCLAPI: https://bmclapi2.bangbang93.com/maven
+        MCBBS: https://download.mcbbs.net/maven
+
+Mojang:
+  Java:
+    Offical: https://launchermeta.mojang.com/v1/products/java-runtime/2ec0cc96c44e5a76b9c8b7c39df7210883d12871/all.json
+
+    Mirrors:
+      BMCLAPI: https://bmclapi2.bangbang93.com/v1/products/java-runtime/2ec0cc96c44e5a76b9c8b7c39df7210883d12871/all.json
+      MCBBS: https://download.mcbbs.net/v1/products/java-runtime/2ec0cc96c44e5a76b9c8b7c39df7210883d12871/all.json
+
+Liteloader:
+  Offical: http://dl.liteloader.com/versions/versions.json
+
+  Mirrors:
+    BMCLAPI: https://bmclapi.bangbang93.com/maven/com/mumfrey/liteloader/versions.json
+    MCBBS: https://download.mcbbs.net/maven/com/mumfrey/liteloader/versions.json
+
+Optifine:
+  Versions:
+    Offical: None
+
+    Mirrors:
+      BMCLAPI: https://bmclapi2.bangbang93.com/optifine/:mcversion
+      MCBBS: https://download.mcbbs.net/optifine/:mcversion
+
+  File:
+    Offical: None
+
+    Mirrors:
+      BMCLAPI: https://bmclapi2.bangbang93.com/optifine/:mcversion/:type/:patch
+
+
+Forge:
+  Offical: https://files.minecraftforge.net/maven
+
+  Mirrors:
+    BMCLAPI: https://bmclapi2.bangbang93.com/maven
+
+AuthlibInjector:
+  Offical: https://authlib-injector.yushi.moe
+
+  Mirrors:
+    BMCLAPI: https://bmclapi2.bangbang93.com/mirrors/authlib-injector
+
+Farbic:
+  Version:
+    Offical: https://meta.fabricmc.net
+
+    Mirrors:
+      BMCLAPI: https://bmclapi2.bangbang93.com/fabric-meta
+
+  Files:
+    Offical: https://maven.fabricmc.net
+
+    Mirrors:
+      BMCLAPI: https://bmclapi2.bangbang93.com/maven
