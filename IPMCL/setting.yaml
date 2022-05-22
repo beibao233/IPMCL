@@ -1,0 +1,11 @@
+Launcher:
+  Language: en_us
+  Name: IPMCL
+  Version: InternalTest
+Mirror:
+  Name: MCBBS
+  Official: false
+Platforms:
+  Darwin: natives-osx
+  Liunx: natives-linux
+  Windows: natives-windows

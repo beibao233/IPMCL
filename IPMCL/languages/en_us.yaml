@@ -1,0 +1,13 @@
+Minecraft:
+  Version:
+    Success: Minecraft version list fetched successfully.
+  Download:
+    Success:
+      Self: Game body {name} downloaded successfully.
+      Library: Support library {name} downloaded successfully.
+      Asset: Asset {name} downloaded successfully
+  Install:
+    Start: Minecraft {version} installation begins.
+    Finished: Minecraft {version} installed.
+    Errors:
+      PermissionError: Please open the launcher with administrator or check if the file is occupied!

@@ -1,0 +1,13 @@
+Minecraft:
+  Version:
+    Success: Minecraft 版本列表获取成功。
+  Download:
+    Success:
+      Self: 游戏本体 {name} 下载成功。
+      Library: 支持库 {name} 下载成功。
+      Asset: 资源 {name} 下载成功。
+  Install:
+    Start: Minecraft {version} 安装开始。
+    Finished: Minecraft {version} 安装完成。
+    Errors:
+      PermissionError: 请用管理员打开启动器或检查文件是否被占用！
