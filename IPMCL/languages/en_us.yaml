@@ -1,4 +1,9 @@
 Minecraft:
+  Launcher:
+    JavaSelect: Select Java {version} to start!
+    Success: Minecraft {verison_name} started successfully!
+    Jvm_Parameters: Jvm parameters generated successfully
+    Parameters: Minecraft parameters generated successfully
   Version:
     Success: Minecraft version list fetched successfully.
   Download:
@@ -6,6 +11,8 @@ Minecraft:
       Self: Game body {name} downloaded successfully.
       Library: Support library {name} downloaded successfully.
       Asset: Asset {name} downloaded successfully
+    Fail:
+      Asset: Asset {name} download failed!
   Install:
     Start: Minecraft {version} installation begins.
     Finished: Minecraft {version} installed.

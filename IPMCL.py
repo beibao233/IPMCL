@@ -16,6 +16,9 @@ file_names = list()
 
 
 class NoAliasDumper(SafeDumper):
+    def increase_indent(self, flow=False, indentless=False):
+        return super(NoAliasDumper, self).increase_indent(flow, False)
+
     def ignore_aliases(self, data):
         return True
 

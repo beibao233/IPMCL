@@ -1,4 +1,9 @@
 Minecraft:
+  Launcher:
+    JavaSelect: 选择 Java {version} 启动！
+    Success: Minecraft {verison_name} 启动成功！
+    Jvm_Parameters: Jvm 参数生成成功
+    Parameters: Minecraft 参数生成成功
   Version:
     Success: Minecraft 版本列表获取成功。
   Download:
@@ -6,6 +11,8 @@ Minecraft:
       Self: 游戏本体 {name} 下载成功。
       Library: 支持库 {name} 下载成功。
       Asset: 资源 {name} 下载成功。
+    Fail:
+      Asset: 资源 {name} 下载失败！
   Install:
     Start: Minecraft {version} 安装开始。
     Finished: Minecraft {version} 安装完成。
