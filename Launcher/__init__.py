@@ -1,0 +1,1 @@
+from .Minecraft import launch

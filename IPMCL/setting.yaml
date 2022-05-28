@@ -1,5 +1,5 @@
 Download:
-  Concurrency: 5
+  Concurrency: 1
   CountOfRetry: 5
   TimeAfterConnectionReset: 0.2
 Java:

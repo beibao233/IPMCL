@@ -1,6 +1,6 @@
-from Manifest import Manifest
+from .Manifest import Manifest
+from .File_Download import download
 from Deploy.Path import create
-from File_Download import download
 from Request import uload
 from main import download_loop
 from IPMCL import setting, sources, l_current

@@ -1,20 +1,20 @@
 Minecraft:
   Launcher:
-    JavaSelect: Ñ¡Ôñ Java {version} Æô¶¯£¡
-    Success: Minecraft {verison_name} Æô¶¯³É¹¦£¡
-    Jvm_Parameters: Jvm ²ÎÊıÉú³É³É¹¦
-    Parameters: Minecraft ²ÎÊıÉú³É³É¹¦
+    JavaSelect: é€‰æ‹© Java {version} å¯åŠ¨ï¼
+    Success: Minecraft {verison_name} å¯åŠ¨æˆåŠŸï¼
+    Jvm_Parameters: Jvm å‚æ•°ç”ŸæˆæˆåŠŸ
+    Parameters: Minecraft å‚æ•°ç”ŸæˆæˆåŠŸ
   Version:
-    Success: Minecraft °æ±¾ÁĞ±í»ñÈ¡³É¹¦¡£
+    Success: Minecraft ç‰ˆæœ¬åˆ—è¡¨è·å–æˆåŠŸã€‚
   Download:
     Success:
-      Self: ÓÎÏ·±¾Ìå {name} ÏÂÔØ³É¹¦¡£
-      Library: Ö§³Ö¿â {name} ÏÂÔØ³É¹¦¡£
-      Asset: ×ÊÔ´ {name} ÏÂÔØ³É¹¦¡£
+      Self: æ¸¸æˆæœ¬ä½“ {name} ä¸‹è½½æˆåŠŸã€‚
+      Library: æ”¯æŒåº“ {name} ä¸‹è½½æˆåŠŸã€‚
+      Asset: èµ„æº {name} ä¸‹è½½æˆåŠŸã€‚
     Fail:
-      Asset: ×ÊÔ´ {name} ÏÂÔØÊ§°Ü£¡
+      Asset: èµ„æº {name} ä¸‹è½½å¤±è´¥ï¼
   Install:
-    Start: Minecraft {version} °²×°¿ªÊ¼¡£
-    Finished: Minecraft {version} °²×°Íê³É¡£
+    Start: Minecraft {version} å®‰è£…å¼€å§‹ã€‚
+    Finished: Minecraft {version} å®‰è£…å®Œæˆã€‚
     Errors:
-      PermissionError: ÇëÓÃ¹ÜÀíÔ±´ò¿ªÆô¶¯Æ÷»ò¼ì²éÎÄ¼şÊÇ·ñ±»Õ¼ÓÃ£¡
+      PermissionError: è¯·ç”¨ç®¡ç†å‘˜æ‰“å¼€å¯åŠ¨å™¨æˆ–æ£€æŸ¥æ–‡ä»¶æ˜¯å¦è¢«å ç”¨ï¼

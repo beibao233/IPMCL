@@ -11,8 +11,9 @@ import os
 
 
 async def download_assets(asset_hash_f2, asset_hash, assets_path, asset, semaphore=None):
-    if operating_system == "natives-windows" and setting['Download']['Concurrency'] >= 500:
+    if operating_system == "natives-windows" and setting['Download']['Concurrency'] > 500:
         setting['Download']['Concurrency'] = 500
+        semaphore = await asyncio.Semaphore(setting['Download']['Concurrency'])
 
     async with semaphore:
         if not setting['Mirror']['Official']:

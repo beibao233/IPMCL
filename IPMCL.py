@@ -28,18 +28,19 @@ for file in os.listdir(os.path.join(base_path, "IPMCL")):
         continue
     else:
         try:
-            with open(os.path.join(base_path, "IPMCL", file)) as f:
+            with open(os.path.join(base_path, "IPMCL", file), encoding="UTF-8") as f:
                 data = load(f, Loader=FullLoader)
 
             file_names.append(file)
 
             exec(f"{os.path.splitext(file)[0]} = {data}")
-        except PermissionError:
+        except (PermissionError, IsADirectoryError):
             exec(f"{os.path.splitext(file)[0]} = {dict()}")
 
             try:
                 for deeper_file in os.listdir(os.path.join(base_path, "IPMCL", os.path.splitext(file)[0])):
-                    with open(os.path.join(base_path, "IPMCL", os.path.splitext(file)[0], deeper_file)) as f:
+                    with open(os.path.join(base_path, "IPMCL", os.path.splitext(file)[0], deeper_file),
+                              encoding="UTF-8") as f:
                         exec(f"{os.path.splitext(file)[0]}['{os.path.splitext(deeper_file)[0]}'] "
                              f"= "
                              f"{load(f, Loader=FullLoader)}")
