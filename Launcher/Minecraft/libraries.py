@@ -37,10 +37,16 @@ def unzip_natives(base_path: str, libraries: dict, version_name: str):
 def library_paths(base_path: str, libraries: dict, version_name: str):
     if platform.system() == "Windows":
         platform_name = 'windows'
+        delimiter = ";"
+        path_delimiter = "\\"
     elif platform.system() == "Darwin":
         platform_name = 'osx'
+        delimiter = ":"
+        path_delimiter = "/"
     else:
-        platform_name = 'windows'
+        platform_name = 'linux'
+        delimiter = ":"
+        path_delimiter = "/"
 
     libraries_path = []
 
@@ -76,7 +82,7 @@ def library_paths(base_path: str, libraries: dict, version_name: str):
     cp = str()
 
     for library_path in sorted(set(libraries_path), key=libraries_path.index):
-        cp += library_path + ';'
+        cp += library_path + delimiter
 
     cp += os.path.join(
         base_path,
@@ -85,6 +91,6 @@ def library_paths(base_path: str, libraries: dict, version_name: str):
         version_name + ".jar"
     )
 
-    cp = cp.replace('/', '\\')
+    cp = cp.replace('/', path_delimiter)
 
     return cp

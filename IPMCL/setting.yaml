@@ -2,16 +2,6 @@ Download:
   Concurrency: 1
   CountOfRetry: 5
   TimeAfterConnectionReset: 0.2
-Java:
-  jdk-17.0.2:
-    - '17.0'
-    - C:\Program Files\Java\jdk-17.0.2\bin\java.exe
-  jdk1.8.0_191:
-    - '1.8'
-    - C:\Program Files\Java\jdk1.8.0_191\bin\java.exe
-  jre1.8.0_321:
-    - '1.8'
-    - C:\Program Files\Java\jre1.8.0_321\bin\java.exe
 Launcher:
   Language: cn_zh
   Name: IPMCL
@@ -21,5 +11,5 @@ Mirror:
   Official: false
 Platforms:
   Darwin: natives-osx
-  Liunx: natives-linux
+  Linux: natives-linux
   Windows: natives-windows

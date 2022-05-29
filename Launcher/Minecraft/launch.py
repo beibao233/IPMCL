@@ -1,6 +1,6 @@
 from IPMCL import setting, l_current
 from Launcher.Java import finder
-from libraries import library_paths, unzip_natives
+from .libraries import library_paths, unzip_natives
 
 from loguru import logger
 from shutil import copyfile, rmtree
@@ -281,6 +281,6 @@ def launch(
                                       high_mode=False
                                       )
 
-    subprocess.Popen(command)
+    subprocess.Popen(command, shell=True)
 
     return True
