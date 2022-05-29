@@ -13,4 +13,7 @@ IPMCL Is a Python MC Lanuncher
 
 ### 开发进度
 支持下载所有Java Minecraft “version_manifest” 文件中所支持的版本的游戏文件
+
 支持启动所有Java Minecraft “version_manifest” 文件中所支持的版本
+
+支持在搭载MacOS的设备上支持上两条的功能
