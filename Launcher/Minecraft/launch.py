@@ -281,6 +281,9 @@ def launch(
                                       high_mode=False
                                       )
 
-    subprocess.Popen(command, shell=True)
+    if platform.system() == "Windows":
+        subprocess.Popen(command)
+    elif platform.system() == "Darwin":
+        subprocess.Popen(command, shell=True)
 
     return True
