@@ -1,5 +1,6 @@
 import platform
 import asyncio
+import sys
 import os
 
 if platform.system() == 'Windows':
@@ -10,5 +11,12 @@ else:
     download_loop = asyncio.get_event_loop()
 
 
-global base_path
-base_path = os.path.dirname(__file__)
+base_path = os.path.dirname(os.path.realpath(sys.executable))
+
+if not os.path.exists(os.path.join(base_path, "IPMCL")):
+    base_path = os.path.dirname(__file__)
+
+if not os.path.exists(os.path.join(base_path, "IPMCL")):
+    # 需要提示
+
+    exit()
