@@ -16,15 +16,16 @@ def realname(argument_name: str, ):
 
 
 def legacy(assets_root, version_assets_index):
-
     legacy_path = os.path.join(assets_root, "legacy")
 
+    # 保证Legacy资源文件是正确的
     if os.path.exists(legacy_path):
         rmtree(legacy_path)
         os.makedirs(legacy_path)
     else:
         os.makedirs(legacy_path)
 
+    # 从index中复制所有所需文件到Legacy文件夹
     for asset_object in version_assets_index["objects"]:
 
         asset_hash = version_assets_index["objects"][asset_object]["hash"]
@@ -68,7 +69,7 @@ def jvm_argument(version_json, natives_directory, classpath):
 
             except AttributeError:
                 jvm_command += f"{argument} "
-            
+
         else:
             try:
                 # 确定是否可以使用此规则并确保操作平台正确
@@ -120,12 +121,13 @@ def minecraft_argument(version_json,
                        auth_session,
                        version_index=None,
                        high_mode=True):
+    if not high_mode:
+        with open(os.path.join(assets_root, "indexes", version_index["assetIndex"]["id"]) + ".json") as f:
+            version_assets_index = json.load(f)
 
-    with open(os.path.join(assets_root, "indexes", version_index["assetIndex"]["id"])+".json") as f:
-        version_assets_index = json.load(f)
-
-    if "map_to_resources" in version_assets_index or "assets" in version_index and version_index["assets"] == "legacy":
-        game_assets = legacy(assets_root=assets_root, version_assets_index=version_assets_index)
+        if "map_to_resources" in version_assets_index or\
+                "assets" in version_index and version_index["assets"] == "legacy":
+            game_assets = legacy(assets_root=assets_root, version_assets_index=version_assets_index)
 
     command = str()
 
@@ -136,17 +138,20 @@ def minecraft_argument(version_json,
 
     for argument in arguments:
         if isinstance(argument, str):
+            # 填充所需数据
             try:
                 argument_name = re.search(r"\$\{[\w]*}", argument).group()
                 argument_realname = realname(argument_name)
 
                 command += f"""{eval(f"argument.replace('{argument_name}', {argument_realname})")} """
 
+            # 如果不需要填充则直接添加
             except AttributeError:
                 command += f"{argument} "
         else:
             features = False
 
+            # 检查是否使用了当前Feature
             for rule in argument['rules']:
                 if rule['action'] != 'allow':
                     continue
@@ -155,7 +160,9 @@ def minecraft_argument(version_json,
                         f"{list(rule['features'].keys())[0]} is {rule['features'][list(rule['features'].keys())[0]]}")
 
             if features:
+                # 如果argument value是个列表则
                 if isinstance(argument['value'], list):
+                    # 过每个value
                     for flag in argument['value']:
                         try:
                             argument_name = re.search(r"\$\{[\w]*}", flag).group()
@@ -165,6 +172,7 @@ def minecraft_argument(version_json,
                         except AttributeError:
                             command += f"{flag} "
                 else:
+                    # 不是直接进行替换
                     try:
                         argument_name = re.search(r"\$\{[\w]*}", argument['value']).group()
                         argument_realname = realname(argument_name)
@@ -199,22 +207,39 @@ def launch(
 
     command = str()
 
+    # 选择当前java
     for java in javas:
         try:
             if javas[java][0].replace("1.", '').startswith(str(version_json["javaVersion"]["majorVersion"])):
-                logger.info(l_current["Minecraft"]["Launcher"]["JavaSelect"].format(version=javas[java][0]))
+                logger.info(l_current["Minecraft"]["Launch"]["Success"]["JavaSelect"].format(version=javas[java][0]))
                 command += f'"{javas[java][1]}" '
                 break
 
         except KeyError:
             if javas[java][0].replace("1.", '').startswith(str(8)):
-                logger.info(l_current["Minecraft"]["Launcher"]["JavaSelect"].format(version=javas[java][0]))
+                logger.info(l_current["Minecraft"]["Launch"]["Success"]["JavaSelect"].format(version=javas[java][0]))
                 command += f'"{javas[java][1]}" '
                 break
 
-    cp = f'"{library_paths(base_path=game_directory, libraries=version_json["libraries"], version_name=version_name)}"'
-    nd = f'"{unzip_natives(base_path=game_directory, libraries=version_json["libraries"], version_name=version_name)}"'
+    # 如果此时command还是空字符串则说明计算机没有安装当前Minecraft所需的Java版本 报错并退出
+    if command == str():
+        logger.warning(l_current["Minecraft"]["Launch"]["Errors"]["CompatibleJavaNotFound"]
+                       .format(version=str(version_json["javaVersion"]["majorVersion"])))
+        return False
 
+    # 获取所有 classpath 路径 并提示成功
+    cp = \
+        f'"{library_paths(base_path=game_directory, libraries=version_json["libraries"], version_name=version_name)}"'
+
+    logger.info(l_current["Minecraft"]["Launch"]["Success"]["ClassPath_Parameters"])
+
+    # 获取 native 库路径 并提示成功
+    nd = \
+        f'"{unzip_natives(base_path=game_directory, libraries=version_json["libraries"], version_name=version_name)}"'
+
+    logger.info(l_current["Minecraft"]["Launch"]["Success"]["Native_Unzip_Parameters"])
+
+    # 准备所有所需
     assets_root = os.path.join(game_directory, 'assets')
     clientid = "${clientid}"
     auth_xuid = "${auth_xuid}"
@@ -222,12 +247,15 @@ def launch(
     version_type = setting["Launcher"]["Name"]
     assets_index_name = version_json["assetIndex"]["id"]
 
+    # 尝试以高版本模式启动
     try:
         command += jvm_argument(version_json=version_json,
                                 natives_directory=nd,
                                 classpath=cp)
 
         command += f"-Xmn{str(xmn)}m -Xmx{str(xmx)}m {version_json['mainClass']} "
+
+        logger.info(l_current["Minecraft"]["Launch"]["Success"]["Jvm_Parameters"])
 
         command += minecraft_argument(version_json=version_json,
                                       auth_player_name=auth_player_name,
@@ -247,7 +275,13 @@ def launch(
                                       auth_session=auth_session,
                                       resolution_height=resolution_height
                                       )
+
+        logger.info(l_current["Minecraft"]["Launch"]["Success"]["Parameters"])
+
+    # 如果无法以高版本模式启动则使用Legacy模式启动 此时这里实现有点小离谱 以后可以最好改改
     except KeyError:
+        logger.info(l_current["Minecraft"]["Launch"]["Success"]["LegacyMode"])
+
         if platform.version().startswith('10'):
             command += '-Dos.name="Windows 10" -Dos.version=10.0 '
 
@@ -259,6 +293,8 @@ def launch(
         command += f"-cp {cp} "
 
         command += f"-Xmn{str(xmn)}m -Xmx{str(xmx)}m {version_json['mainClass']} "
+
+        logger.info(l_current["Minecraft"]["Launch"]["Success"]["Jvm_Parameters"])
 
         command += minecraft_argument(version_json=version_json["minecraftArguments"].split(),
                                       auth_player_name=auth_player_name,
@@ -281,9 +317,14 @@ def launch(
                                       high_mode=False
                                       )
 
+        logger.info(l_current["Minecraft"]["Launch"]["Success"]["Parameters"])
+
+    # 多平台启动问题 似乎Darwin也就是MacOS可以启动了 但是虚拟机显卡有问题无法测试
     if platform.system() == "Windows":
         subprocess.Popen(command)
     elif platform.system() == "Darwin":
         subprocess.Popen(command, shell=True)
+
+    logger.info(l_current["Minecraft"]["Launch"]["Success"]["Launched"].format(version_name=version_name))
 
     return True

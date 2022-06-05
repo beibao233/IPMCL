@@ -2,6 +2,28 @@ Download:
   Concurrency: 1
   CountOfRetry: 5
   TimeAfterConnectionReset: 0.2
+Java:
+  jdk-17.0.2:
+    - '17.0'
+    - C:\Program Files\Java\jdk-17.0.2\bin\java.exe
+  jre1.8.0_321:
+    - '1.8'
+    - C:\Program Files\Java\jre1.8.0_321\bin\java.exe
+Launch:
+  MS_OAuth:
+    CheckInterval: 12
+    CheckTimes: 50
+    ClientId: ef7a2615-ef87-4609-9b6b-baa3ea1194a2
+    ClientSecret: JRh8Q~eCD1O44bom9uFEWt.9d-4da1V2eyRX9bsd
+    DefaultPort: 5000
+    URL:
+      Access: https://login.live.com/oauth20_token.srf
+      Authorize: https://login.live.com/oauth20_authorize.srf
+      Minecraft: https://api.minecraftservices.com/authentication/login_with_xbox
+      Ownership: https://api.minecraftservices.com/entitlements/mcstore
+      Profile: https://api.minecraftservices.com/minecraft/profile
+      XBL: https://user.auth.xboxlive.com/user/authenticate
+      XSTS: https://xsts.auth.xboxlive.com/xsts/authorize
 Launcher:
   Language: cn_zh
   Name: IPMCL

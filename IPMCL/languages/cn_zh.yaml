@@ -1,9 +1,36 @@
 Minecraft:
-  Launcher:
-    JavaSelect: 选择 Java {version} 启动！
-    Success: Minecraft {verison_name} 启动成功！
-    Jvm_Parameters: Jvm 参数生成成功
-    Parameters: Minecraft 参数生成成功
+  Auth:
+    AuthSuccess: 微软账户授权成功！
+    LoginSucces: 游戏登录成功！
+    LocalServerStarted: 本地授权服务器启动，等待登录跳转。
+    LocalServerStopped: 收到登录跳转，本地授权服务器关闭。
+    AuthorizationToken: 授权令牌转换成功！
+    GameOwnership: 游戏所有权信息获取成功！
+    Profile: 用户资料获取成功！
+    Authenticate:
+      XBL: 成功进行 XBL 身份验证！
+      XSTS: 成功进行 XSTS 身份验证！
+      Minecraft: 成功进行 Minecraft 身份验证！
+    Errors:
+      OAuth_Flow_TimeOut: 在{seconds}秒后还未在浏览器中完成授权。授权失败！
+      IsntOwn: 当前登陆的微软账号不包含 Minecraft Java 版副本。
+      XSTS:
+        2148916233: 当前登陆的微软账户不包含 Xbox 帐户！这种情况会发生在您并未完成我的世界账户迁移或登录了一个不包含 Xbox 账户的错误微软账户。
+        2148916235: 当前登陆的微软帐户来自 Xbox Live 不可用/被禁止的国家/地区。请检查您 Xbox Live 的国家/地区设定！
+        2148916236: 当前登陆的帐户需要在 Xbox 页面上进行成人验证。(仅韩国账户)
+        2148916237: 当前登陆的帐户需要在 Xbox 页面上进行成人验证。(仅韩国账户)
+        2148916238: 当前登陆帐户是儿童（18 岁以下）账户，除非该帐户由成人添加到家庭，否则无法继续。
+  Launch:
+    Success:
+      LegacyMode: 检测到为 Legacy 版本，使用 Legacy 模式启动！
+      JavaSelect: 选择 Java {version} 启动！
+      Launched: Minecraft {version_name} 启动成功！
+      Jvm_Parameters: Jvm 参数生成成功！
+      ClassPath_Parameters: 资源参数生成成功！
+      Native_Unzip_Parameters: 本机库成功解压并生成参数！
+      Parameters: Minecraft 参数生成成功！
+    Errors:
+      CompatibleJavaNotFound: 找不到兼容的 Java {version}, 启动失败！
   Version:
     Success: Minecraft 版本列表获取成功。
   Download:

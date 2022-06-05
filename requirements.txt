@@ -2,3 +2,4 @@ pyqt5
 aiohttp
 pyyaml
 loguru
+flask

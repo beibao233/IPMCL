@@ -30,6 +30,8 @@ def unzip_natives(base_path: str, libraries: dict, version_name: str):
 
         except KeyError:
             continue
+        except PermissionError:
+            continue
 
     return version_natives_path
 

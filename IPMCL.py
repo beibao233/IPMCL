@@ -10,6 +10,7 @@ global l_current
 
 global sources
 global setting
+global accounts
 
 # 准备好文件名退出程序时保存
 file_names = list()
