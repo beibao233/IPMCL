@@ -1,20 +1,47 @@
 Minecraft:
-  Launcher:
-    JavaSelect: Select Java {version} to start!
-    Success: Minecraft {verison_name} started successfully!
-    Jvm_Parameters: Jvm parameters generated successfully
-    Parameters: Minecraft parameters generated successfully
+  Auth:
+    AuthSuccess: Microsoft account authorization is successful!
+    LoginSucces: Game login is successful!
+    LocalServerStarted: The local authorization server is started, waiting for the login to jump.
+    LocalServerStopped: The login redirection is received, and the local authorization server is closed.
+    AuthorizationToken: The authorization token conversion was successful!
+    GameOwnership: Game ownership information obtained successfully!
+    Profile: User profile obtained successfully!
+    Authenticate:
+      XBL: Successful XBL authentication!
+      XSTS: Successful XSTS authentication!
+      Minecraft: Authenticated to Minecraft successfully!
+    Errors:
+      OAuth_Flow_TimeOut: Authorization has not been completed in the browser after {seconds} seconds. Authorization failed!
+      IsntOwn: The currently logged in Microsoft account does not contain a copy of Minecraft Java Edition.
+      XSTS:
+        2148916233: The currently signed-in Microsoft account does not contain an Xbox account! This can happen if you didn't complete the Minecraft account migration or signed in to a wrong Microsoft account that didn't contain an Xbox account.
+        2148916235: The currently signed-in Microsoft account is from a country where Xbox Live is unavailable/banned. Please check your Xbox Live country settings!
+        2148916236: The currently signed-in account requires adult verification on the Xbox page. (Korean accounts only)
+        2148916237: The currently signed-in account requires adult verification on the Xbox page. (Korean accounts only)
+        2148916238: The account currently logged in is a child (under 18) account and cannot continue unless the account is added to the family by an adult.
+  Launch:
+    Success:
+      LegacyMode: Legacy version detected, use Legacy Mode to boot!
+      JavaSelect: Select Java {version} to start!
+      Launched: Minecraft {version_name} launched successfully!
+      Jvm_Parameters: Jvm parameters generated successfully!
+      ClassPath_Parameters: Resource parameters generated successfully!
+      Native_Unzip_Parameters: The native library was successfully unpacked and parameters were generated!
+      Parameters: Minecraft parameters generated successfully!
+    Errors:
+      CompatibleJavaNotFound: Compatible Java {version} not found, startup failed!
   Version:
-    Success: Minecraft version list fetched successfully.
+    Success: The list of Minecraft versions was fetched successfully.
   Download:
     Success:
-      Self: Game body {name} downloaded successfully.
+      Self: The game body {name} has been downloaded successfully.
       Library: Support library {name} downloaded successfully.
-      Asset: Asset {name} downloaded successfully
+      Asset: Asset {name} downloaded successfully.
     Fail:
-      Asset: Asset {name} download failed!
+      Asset: Asset {name} failed to download!
   Install:
     Start: Minecraft {version} installation begins.
-    Finished: Minecraft {version} installed.
+    Finished: Minecraft {version} is installed.
     Errors:
       PermissionError: Please open the launcher with administrator or check if the file is occupied!
