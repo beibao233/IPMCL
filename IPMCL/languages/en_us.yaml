@@ -81,8 +81,13 @@ Launcher:
       Fail:
         Path:
           Dir: The current input is not a path! add failed!
-          MinecraftDir: This directory exists, but does not match the characteristics of the Minecraft game path! \nDo I need to format the path to the minecraft game folder? \n(The data in the folder will be deleted)
-          Exist: This directory does not exist! \nDo I need to create this directory and create a new minecraft game file?
+          MinecraftDir: |
+            This directory exists, but does not match the characteristics of the Minecraft game path!
+            Do I need to format the path to the minecraft game folder?
+            (The data in the folder will be deleted)
+          Exist: |
+            This directory does not exist! 
+            Do I need to create this directory and create a new minecraft game file?
       Success:
         Launch: Minecraft {version_name} launched successfully!
         Install: Minecraft {version_name} begins installing!

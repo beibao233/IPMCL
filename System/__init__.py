@@ -52,6 +52,6 @@ if not os.path.exists(os.path.join(base_path, "IPMCL")):
 
 
 if not os.path.exists(os.path.join(base_path, "IPMCL")):
-    # ĞèÒªÌáÊ¾
+    # éœ€è¦æç¤º
 
     exit()
