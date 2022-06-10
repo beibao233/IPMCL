@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IPMCL</class>
+ <widget class="QMainWindow" name="IPMCL">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>394</width>
+    <height>345</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: rgb(220, 220, 220);</string>
+  </property>
+  <widget class="QWidget" name="GUI">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QFrame" name="Tool">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QGroupBox" name="Accounts">
+         <property name="title">
+          <string>当前登录</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="1" column="1">
+           <widget class="QGraphicsView" name="skin_img">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>128</width>
+              <height>128</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>128</width>
+              <height>128</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="acceptDrops">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="6" column="0" colspan="3">
+           <widget class="QComboBox" name="game_version_sel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLabel" name="current_label">
+            <property name="text">
+             <string>CurrentAccount</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="0" colspan="3">
+           <widget class="QComboBox" name="accounts_sel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0" colspan="3">
+           <widget class="QPushButton" name="launch_btn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Launch</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="5" column="0" colspan="3">
+           <widget class="QLabel" name="game_versions_label">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="Options">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>游戏选项</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QGroupBox" name="Path">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>路径</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLineEdit" name="path_inp">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="path_save_btn">
+               <property name="text">
+                <string>PushButton</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="Game">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>游戏</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="1" column="1">
+              <widget class="QCheckBox" name="offline_che_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>离线登录</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="autoRepeat">
+                <bool>false</bool>
+               </property>
+               <property name="tristate">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="microsoft_login_btn_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>微软登录</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" colspan="2">
+              <widget class="QComboBox" name="version_sel_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="Install">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>安装</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0" colspan="2">
+              <widget class="QComboBox" name="version_install_sel">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QPushButton" name="install_btn">
+               <property name="text">
+                <string>Install</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="version_name_label">
+               <property name="text">
+                <string>Version_Name</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="version_name_inp"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>microsoft_login_btn_3</sender>
+   <signal>clicked()</signal>
+   <receiver>IPMCL</receiver>
+   <slot>deleteLater()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>595</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>447</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>launch_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>IPMCL</receiver>
+   <slot>deleteLater()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>install_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>IPMCL</receiver>
+   <slot>deleteLater()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>428</x>
+     <y>247</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_save_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>IPMCL</receiver>
+   <slot>deleteLater()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>449</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>accounts_sel</sender>
+   <signal>textActivated(QString)</signal>
+   <receiver>IPMCL</receiver>
+   <slot>deleteLater()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>236</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>243</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

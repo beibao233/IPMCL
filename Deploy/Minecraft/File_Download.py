@@ -1,7 +1,6 @@
 from Request import fdownload, uload
-from IPMCL import setting, sources, l_current
-from main import download_loop
-from System import operating_system
+from IPMCL import setting, sources, l_current, operating_system
+from System import download_loop
 
 from pathlib import Path
 from loguru import logger
@@ -119,6 +118,8 @@ def download(base_path: str, source_dict: dict, version_name: str, side: str = "
 
     with open(os.path.join(assets_path, 'indexes', f"{source_dict['assetIndex']['id']}.json"), "w+") as f:
         dump(assets_index, f, indent=4)
+
+    asyncio.set_event_loop(download_loop)
 
     assets_download_tasks = []
     assets_semaphore = asyncio.Semaphore(setting['Download']['Concurrency'])

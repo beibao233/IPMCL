@@ -1,8 +1,9 @@
 from .Manifest import Manifest
 from .File_Download import download
+
 from Deploy.Path import create
 from Request import uload
-from main import download_loop
+from System import download_loop
 from IPMCL import setting, sources, l_current
 
 from pathlib import Path
@@ -18,8 +19,8 @@ def installer(home_path: str, version: str, version_name: str = None):
 
     create(home_path=home_path)
 
-    if not Path(os.path.join(home_path, 'versions', version)).exists():
-        os.makedirs(os.path.join(home_path, 'versions', version))
+    if not Path(os.path.join(home_path, 'versions', version_name)).exists():
+        os.makedirs(os.path.join(home_path, 'versions', version_name))
 
     sources_all = Manifest().all
 

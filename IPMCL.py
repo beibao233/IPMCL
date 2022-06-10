@@ -1,6 +1,8 @@
+from System import base_path
+
 from yaml import load, dump, FullLoader, SafeDumper
-from main import base_path
 from loguru import logger
+import platform
 import atexit
 import os
 
@@ -49,6 +51,9 @@ for file in os.listdir(os.path.join(base_path, "IPMCL")):
                 logger.warning('Supports up to two levels of file directories! The program exits!')
                 exit()
 
+        except FileNotFoundError:
+            pass
+
 
 # 设置当前语言
 def language(language_name: str):
@@ -60,6 +65,8 @@ def language(language_name: str):
 
 
 language(setting['Launcher']['Language'])
+
+operating_system = setting['Platforms'][platform.system()]
 
 
 @atexit.register

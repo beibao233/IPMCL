@@ -1,6 +1,6 @@
 from Request import uload
 from IPMCL import sources, setting, l_current
-from main import download_loop
+from System import download_loop
 
 from loguru import logger
 

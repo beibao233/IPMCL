@@ -45,3 +45,49 @@ Minecraft:
     Finished: Minecraft {version} is installed.
     Errors:
       PermissionError: Please open the launcher with administrator or check if the file is occupied!
+Launcher:
+  GUI:
+    Log:
+      Ready: GUI initialization completed!
+      LoginStart: Microsoft Authentication Begins!
+      LaunchStart: The game starts to launch! Path {path} Version name {version_name} Account {account} Whether to log in offline {offline}.
+      SkinRStart: Start re-skinning!
+      SkinReloaded: Skin reloaded successfully!
+      Path:
+        Create: Path created successfully! path {path}
+        Add: Path added successfully! path {path}
+        Cancel: Path addition canceled!
+    ButtonAndLabels:
+      CurrentAccount: current account
+      CurrentLogin: currently logged in
+      Launch: Launch the game
+      Options: Game Options
+      Path: path
+      Game: game
+      Offline: Offline login
+      Microsoft: Sign in with Microsoft
+      Install: install
+      InstallNow: Install Now!
+      Version_Name: version name
+      PathSave: save path
+      LaunchVersion: Launch version
+    PopUp:
+      Title:
+        Info: Tips
+      Unselect:
+        Path: no game path selected
+        Version: No game version selected
+        Account: No activation account selected
+      Fail:
+        Path:
+          Dir: The current input is not a path! add failed!
+          MinecraftDir: This directory exists, but does not match the characteristics of the Minecraft game path! \nDo I need to format the path to the minecraft game folder? \n(The data in the folder will be deleted)
+          Exist: This directory does not exist! \nDo I need to create this directory and create a new minecraft game file?
+      Success:
+        Launch: Minecraft {version_name} launched successfully!
+        Install: Minecraft {version_name} begins installing!
+        Installed: Minecraft {version_name} installed successfully!
+        Path:
+          Create: Path created successfully!
+          Add: Path added successfully!
+          Cancel: Path addition canceled!

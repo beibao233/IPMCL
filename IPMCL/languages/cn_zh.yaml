@@ -45,3 +45,49 @@ Minecraft:
     Finished: Minecraft {version} 安装完成。
     Errors:
       PermissionError: 请用管理员打开启动器或检查文件是否被占用！
+Launcher:
+  GUI:
+    Log:
+      Ready: GUI初始化完成！
+      LoginStart: 微软验证开始！
+      LaunchStart: 游戏开始启动！路径 {path} 版本名 {version_name} 账号 {account} 是否离线登录 {offline}。
+      SkinRStart: 开始重获取皮肤！
+      SkinReloaded: 皮肤重载成功！
+      Path:
+        Create: 路径创建成功！路径 {path}
+        Add: 路径添加成功！路径 {path}
+        Cancel: 路径添加取消！
+    ButtonAndLabels:
+      CurrentAccount: 当前账号
+      CurrentLogin: 当前登录
+      Launch: 启动游戏
+      Options: 游戏选项
+      Path: 路径
+      Game: 游戏
+      Offline: 离线登录
+      Microsoft: 微软登录
+      Install: 安装
+      InstallNow: 现在安装！
+      Version_Name: 版本名称
+      PathSave: 保存路径
+      LaunchVersion: 启动版本
+    PopUp:
+      Title:
+        Info: 提示
+      Unselect:
+        Path: 未选择游戏路径
+        Version: 未选择游戏版本
+        Account: 未选择启动账号
+      Fail:
+        Path:
+          Dir: 当前输入非路径！添加失败！
+          MinecraftDir: 此目录存在，但是不符合我的世界游戏路径的特征！\n需要将路径格式化成我的世界游戏文件夹吗？\n（文件夹内的数据将被删除）
+          Exist: 此目录不存在！\n需要新建此目录并新建我的世界游戏文件吗？
+      Success:
+        Launch: 我的世界 {version_name} 启动成功！
+        Install: 我的世界 {version_name} 开始安装！
+        Installed: 我的世界 {version_name} 安装成功！
+        Path:
+          Create: 路径创建成功！
+          Add: 路径添加成功！
+          Cancel: 路径添加取消！

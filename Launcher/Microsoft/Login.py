@@ -1,9 +1,8 @@
 from .LocalServer import start_server_thread, stop_thread, code_buffer_read
-from IPMCL import setting, l_current, accounts
+from IPMCL import setting, l_current, accounts, config_save
 
 from loguru import logger
 
-import json
 import socket
 import random
 import asyncio
@@ -245,6 +244,8 @@ async def start_auth():
         }
 
         setting["Launch"]["Select"] = minecraft_access_token_index["username"]
+
+        config_save()
 
         logger.info(l_current["Minecraft"]["Auth"]["AuthSuccess"])
 

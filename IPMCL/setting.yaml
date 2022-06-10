@@ -18,6 +18,8 @@ Launch:
       XBL: https://user.auth.xboxlive.com/user/authenticate
       XSTS: https://xsts.auth.xboxlive.com/xsts/authorize
 Launcher:
+  GUI:
+    Color: F5F5F5
   Language: cn_zh
   Name: IPMCL
   Version: InternalTest
