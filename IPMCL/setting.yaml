@@ -1,5 +1,5 @@
 Download:
-  Concurrency: 1
+  Concurrency: 5
   CountOfRetry: 5
   TimeAfterConnectionReset: 0.2
 Launch:

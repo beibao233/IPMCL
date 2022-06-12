@@ -16,4 +16,20 @@ IPMCL Is a Python MC Lanuncher
 
 支持启动所有Java Minecraft “version_manifest” 文件中所支持的版本
 
-支持在搭载MacOS的设备上支持上两条的功能
+支持在搭载MacOS (除M系列) 的设备上支持上两条的功能
+
+微软登录支持
+
+多账户支持
+
+多路径支持
+
+自动Java搜索
+
+多语言GUI支持 (Demo GUI)
+
+Pyinstaller 打包
+
+支持在搭载MacOS (除M系列) 的设备上支持上六条的功能
+
+# 如果手上有搭载MacOS系列并且愿意做测试的请联系我！
